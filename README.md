@@ -1,15 +1,21 @@
 # create-mordoc-app
 
-Create documentation sites powered by [Mordoc](https://www.mordoc.dev/) with a single command.
+Create a new Mordoc documentation website with one command.
 
-## Usage
+## Documentation
+
+Read the Mordoc documentation at [mordoc.dev](https://mordoc.dev).
+
+## Get started
 
 ```bash
 npx create-mordoc-app my-docs
+cd my-docs
+npm run dev
 ```
 
-This will create a new Mordoc documentation site in a directory called `my-docs`.
+This creates a new Mordoc documentation site in `my-docs`, installs its dependencies and starts a development server. Edit the pages in `content/` and the settings in `config/`. When you are ready to publish, run `npm run build` and deploy the static site it creates.
 
-## Mordoc Documentation
+## License
 
-Read the full docs [here](https://www.mordoc.dev/)
+create-mordoc-app is released under the [MIT License](LICENSE). The authors are listed in [AUTHORS](AUTHORS).
