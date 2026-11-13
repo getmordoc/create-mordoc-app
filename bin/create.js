@@ -60,6 +60,9 @@ fs.writeFileSync(
   'node_modules/\ndist/\n'
 );
 
+// Generate .nvmrc, so version managers such as nvm select the Node.js version Mordoc needs
+fs.writeFileSync(path.join(projectDir, '.nvmrc'), '24\n');
+
 // Generate package.json
 const pkg = {
   name: projectName,
@@ -71,6 +74,11 @@ const pkg = {
   },
   devDependencies: {
     mordoc: `^${mordocVersion}`,
+  },
+  // fsevents ships its finished macOS file; its install script would fail to
+  // rebuild it, after which npm removes the package.
+  allowScripts: {
+    fsevents: false,
   },
 };
 fs.writeFileSync(
