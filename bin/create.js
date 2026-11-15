@@ -88,7 +88,7 @@ fs.writeFileSync(
 
 // Run npm install
 console.log(`\nScaffolding "${projectName}"...`);
-const result = spawnSync('npm', ['install'], {
+const result = spawnSync('npm install', {
   cwd: projectDir,
   stdio: 'inherit',
   shell: true,
